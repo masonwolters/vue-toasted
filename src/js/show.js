@@ -197,6 +197,13 @@ const createIcon = (options, toast) => {
 				}
 
 				break;
+			case 'custom':
+				var html = options.icon;
+				var template = document.createElement('template');
+				template.innerHTML = html;
+
+				iel = template.content.firstChild;
+				break;
 			case 'mdi':
 
 				iel.classList.add('mdi');
@@ -290,6 +297,13 @@ const createAction = (action, toastObject) => {
 					iel.classList.add('fa-' + action.icon.trim());
 				}
 
+				break;
+			case 'custom':
+				var html = options.icon;
+				var template = document.createElement('template');
+				template.innerHTML = html;
+
+				iel = template.content.firstChild;
 				break;
 			case 'mdi':
 				iel.classList.add('mdi');
